@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Registrar Admin de Parqueo" android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:id="@+id/tvTitle"/>
+
+        <!-- DATOS DEL ADMINISTRADOR -->
+        <TextView android:id="@+id/tvSubTitleAdmin" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Datos del Administrador" android:textStyle="bold" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilAdminNombre" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Nombre completo" android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@id/tvSubTitleAdmin" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAdminNombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilAdminCelular" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Celular" android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@id/tilAdminNombre" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAdminCelular" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilAdminEmail" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Correo electrónico" android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@id/tilAdminCelular" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAdminEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilAdminPass" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Contraseña" android:layout_marginTop="8dp" app:passwordToggleEnabled="true" app:layout_constraintTop_toBottomOf="@id/tilAdminEmail" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAdminPass" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilAdminPassConfirm" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Confirmar contraseña" android:layout_marginTop="8dp" app:passwordToggleEnabled="true" app:layout_constraintTop_toBottomOf="@id/tilAdminPass" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAdminPassConfirm" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- DATOS DEL PARQUEO -->
+        <TextView android:id="@+id/tvSubTitleParqueo" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Datos del Parqueo" android:textStyle="bold" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tilAdminPassConfirm" app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilParqueoNombre" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Nombre del Parqueo" android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@id/tvSubTitleParqueo" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etParqueoNombre" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilParqueoTarifa" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Tarifa por hora (Bs)" android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@id/tilParqueoNombre" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etParqueoTarifa" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- NUEVO: Campo para la Capacidad Total -->
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilParqueoCapacidad" android:layout_width="0dp" android:layout_height="wrap_content" android:hint="Capacidad Total (número de espacios)" android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@id/tilParqueoTarifa" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etParqueoCapacidad" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- SELECCIÓN DE UBICACIÓN -->
+        <TextView android:id="@+id/tvUbicacionInfo" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:text="Ubicación: No seleccionada" android:textColor="@android:color/holo_red_dark" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tilParqueoCapacidad" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnSeleccionarMapa" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:text="📍 Seleccionar en el Mapa" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvUbicacionInfo" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- BOTONES DE ACCIÓN -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnCrear" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:text="Registrar Admin y Parqueo" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSeleccionarMapa" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnIrMapa" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:text="Ir al Mapa (Conductor)" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnCrear" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
